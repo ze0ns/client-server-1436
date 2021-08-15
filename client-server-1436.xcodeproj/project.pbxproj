@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		068E4A8026C66E4900AD9EE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4A7F26C66E4900AD9EE7 /* AppDelegate.swift */; };
 		068E4A8226C66E4900AD9EE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4A8126C66E4900AD9EE7 /* SceneDelegate.swift */; };
-		068E4A8426C66E4900AD9EE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4A8326C66E4900AD9EE7 /* ViewController.swift */; };
 		068E4A8726C66E4900AD9EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068E4A8526C66E4900AD9EE7 /* Main.storyboard */; };
 		068E4A8926C66E4C00AD9EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068E4A8826C66E4C00AD9EE7 /* Assets.xcassets */; };
 		068E4A8C26C66E4C00AD9EE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068E4A8A26C66E4C00AD9EE7 /* LaunchScreen.storyboard */; };
+		06C25A6926C8E03B00470886 /* DisplayFruitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C25A6826C8E03B00470886 /* DisplayFruitsTableViewController.swift */; };
+		06C25A6B26C8E05500470886 /* ChooseFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C25A6A26C8E05500470886 /* ChooseFruitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		068E4A7C26C66E4900AD9EE7 /* client-server-1436.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "client-server-1436.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		068E4A7F26C66E4900AD9EE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		068E4A8126C66E4900AD9EE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		068E4A8326C66E4900AD9EE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		068E4A8626C66E4900AD9EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		068E4A8826C66E4C00AD9EE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		068E4A8B26C66E4C00AD9EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		068E4A8D26C66E4C00AD9EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06C25A6826C8E03B00470886 /* DisplayFruitsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFruitsTableViewController.swift; sourceTree = "<group>"; };
+		06C25A6A26C8E05500470886 /* ChooseFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFruitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		068E4A7E26C66E4900AD9EE7 /* client-server-1436 */ = {
 			isa = PBXGroup;
 			children = (
-				068E4A7F26C66E4900AD9EE7 /* AppDelegate.swift */,
-				068E4A8126C66E4900AD9EE7 /* SceneDelegate.swift */,
-				068E4A8326C66E4900AD9EE7 /* ViewController.swift */,
+				06C25A6726C8E01800470886 /* lesson2 */,
+				06C25A6626C8E00600470886 /* app */,
 				068E4A8526C66E4900AD9EE7 /* Main.storyboard */,
 				068E4A8826C66E4C00AD9EE7 /* Assets.xcassets */,
 				068E4A8A26C66E4C00AD9EE7 /* LaunchScreen.storyboard */,
 				068E4A8D26C66E4C00AD9EE7 /* Info.plist */,
 			);
 			path = "client-server-1436";
+			sourceTree = "<group>";
+		};
+		06C25A6626C8E00600470886 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				068E4A8126C66E4900AD9EE7 /* SceneDelegate.swift */,
+				068E4A7F26C66E4900AD9EE7 /* AppDelegate.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		06C25A6726C8E01800470886 /* lesson2 */ = {
+			isa = PBXGroup;
+			children = (
+				06C25A6826C8E03B00470886 /* DisplayFruitsTableViewController.swift */,
+				06C25A6A26C8E05500470886 /* ChooseFruitViewController.swift */,
+			);
+			path = lesson2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				068E4A8426C66E4900AD9EE7 /* ViewController.swift in Sources */,
+				06C25A6B26C8E05500470886 /* ChooseFruitViewController.swift in Sources */,
 				068E4A8026C66E4900AD9EE7 /* AppDelegate.swift in Sources */,
+				06C25A6926C8E03B00470886 /* DisplayFruitsTableViewController.swift in Sources */,
 				068E4A8226C66E4900AD9EE7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
