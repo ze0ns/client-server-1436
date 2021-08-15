@@ -7,10 +7,14 @@
 
 import UIKit
 
+protocol DisplayFruitsTableViewControllerDelegate: AnyObject {
+    func fruitDidSelect(fruit: String)
+}
+
 class DisplayFruitsTableViewController: UITableViewController {
     let fruits = ["Авокадо","Банан","Яблоко","Киви"]
    
-    
+    weak var delegate: DisplayFruitsTableViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,8 @@ class DisplayFruitsTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            let fruit = fruits[indexPath.row]
+        delegate?.fruitDidSelect(fruit: fruit)
+        navigationController?.popViewController(animated: true)
            
        }
 

@@ -5,9 +5,11 @@
 //  Created by zeons on 15.08.2021.
 //
 
+// Первый контроллер
 import UIKit
+//Мы сделали композицию , расширив наш контроллер протоколом
+class ChooseFruitViewController: UIViewController, DisplayFruitsTableViewControllerDelegate {
 
-class ChooseFruitViewController: UIViewController {
 
     @IBOutlet var fruitLabel: UILabel!
     override func viewDidLoad() {
@@ -15,13 +17,19 @@ class ChooseFruitViewController: UIViewController {
 
  
     }
-
+    func fruitDidSelect(fruit: String) {
+        fruitLabel.text = fruit
+    }
     
-//    @IBAction func choiseFruitAction(_ sender: Any) {
-//        let displayFruitsVC = DisplayFruitsTableViewController()
-//
-//        navigationController?.pushViewController(displayFruitsVC, animated: true)
-//
-//    }
+
+    //
+    @IBAction func choiseFruitAction(_ sender: Any) {
+        //Второй контроллер
+       // let displayFruitsVC = DisplayFruitsTableViewController()
+        DisplayFruitsTableViewController().delegate = self
+       //displayFruitsVC.delegate = self
+        navigationController?.pushViewController(DisplayFruitsTableViewController(), animated: true)
+
+    }
     
 }

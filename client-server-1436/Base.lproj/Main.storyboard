@@ -28,7 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Выберем фрукты"/>
                                 <connections>
-                                    <segue destination="9V9-Yh-V0D" kind="show" id="6aI-ca-66c"/>
+                                    <action selector="choiseFruitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QCa-bi-1VF"/>
                                 </connections>
                             </button>
                         </subviews>
