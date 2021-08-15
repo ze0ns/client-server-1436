@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NetworkViewController: UIViewController {
 
@@ -20,9 +21,11 @@ class NetworkViewController: UIViewController {
         
         let task = session.dataTask(with: url) {(data, response, error) in
         let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-            print(json)
+            print(json as Any)
         }
+        task.resume()
     }
+    
     func secondRequest(){
         
     }
