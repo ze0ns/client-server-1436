@@ -8,20 +8,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Network View Controller-->
+        <!--Auth View Controller-->
         <scene sceneID="oWd-Zv-rIg">
             <objects>
-                <viewController id="mjl-KT-Qys" customClass="NetworkViewController" customModule="client_server_1436" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mjl-KT-Qys" customClass="AuthViewController" customModule="client_server_1436" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X8g-PT-xph">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpg-VF-2nT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Zmn-rb-bPf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zmn-rb-bPf" firstAttribute="bottom" secondItem="bpg-VF-2nT" secondAttribute="bottom" id="SRd-Cw-jW5"/>
+                            <constraint firstItem="bpg-VF-2nT" firstAttribute="top" secondItem="Zmn-rb-bPf" secondAttribute="top" id="eTH-C7-Ugz"/>
+                            <constraint firstItem="Zmn-rb-bPf" firstAttribute="trailing" secondItem="bpg-VF-2nT" secondAttribute="trailing" id="s8y-DK-7Dh"/>
+                            <constraint firstItem="bpg-VF-2nT" firstAttribute="leading" secondItem="Zmn-rb-bPf" secondAttribute="leading" id="yyw-n1-0VY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="bpg-VF-2nT" id="bZF-rA-q0m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLA-UX-pZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="684" y="-37"/>
+        </scene>
+        <!--Display Frends Table View Controller-->
+        <scene sceneID="HO7-6R-1zg">
+            <objects>
+                <viewController id="QZ4-7Y-tYv" customClass="DisplayFrendsTableViewController" customModule="client_server_1436" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aun-69-Tyx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ftn-vz-VpB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwr-Ju-Uuj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477" y="-33"/>
         </scene>
     </scenes>
     <resources>
