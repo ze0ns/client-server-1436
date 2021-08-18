@@ -12,6 +12,7 @@
 		068E4A8726C66E4900AD9EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068E4A8526C66E4900AD9EE7 /* Main.storyboard */; };
 		068E4A8926C66E4C00AD9EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068E4A8826C66E4C00AD9EE7 /* Assets.xcassets */; };
 		068E4A8C26C66E4C00AD9EE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068E4A8A26C66E4C00AD9EE7 /* LaunchScreen.storyboard */; };
+		0695E60A26CCC380004ED912 /* FrendsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695E60926CCC37F004ED912 /* FrendsApi.swift */; };
 		069F361426CAA0FC00462686 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F361326CAA0FC00462686 /* Session.swift */; };
 		069F361926CAA19300462686 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F361826CAA19300462686 /* AuthViewController.swift */; };
 		069F361B26CAA1B700462686 /* DisplayFrendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F361A26CAA1B700462686 /* DisplayFrendsTableViewController.swift */; };
@@ -27,6 +28,7 @@
 		068E4A8826C66E4C00AD9EE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		068E4A8B26C66E4C00AD9EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		068E4A8D26C66E4C00AD9EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0695E60926CCC37F004ED912 /* FrendsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrendsApi.swift; sourceTree = "<group>"; };
 		069F361326CAA0FC00462686 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		069F361826CAA19300462686 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		069F361A26CAA1B700462686 /* DisplayFrendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFrendsTableViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				069F361326CAA0FC00462686 /* Session.swift */,
+				0695E60926CCC37F004ED912 /* FrendsApi.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				069F361426CAA0FC00462686 /* Session.swift in Sources */,
+				0695E60A26CCC380004ED912 /* FrendsApi.swift in Sources */,
 				068E4A8026C66E4900AD9EE7 /* AppDelegate.swift in Sources */,
 				069F361B26CAA1B700462686 /* DisplayFrendsTableViewController.swift in Sources */,
 				069F361926CAA19300462686 /* AuthViewController.swift in Sources */,
