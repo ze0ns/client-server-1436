@@ -67,11 +67,14 @@ extension AuthViewController: WKNavigationDelegate {
                 return dict
         }
         
-        guard let token = params["access_token"] else {return}
+        guard let token = params["access_token"],
+              let userId = params["user_id"]
+              else {return}
         
         print(token)
         
         Session.shared.token = token
+        Session.shared.userId = Int(userId) ?? 0
         
         let frendsVC = DisplayFrendsTableViewController()
         navigationController?.pushViewController(frendsVC, animated: true)
