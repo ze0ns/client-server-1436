@@ -16,6 +16,8 @@
 		069F361426CAA0FC00462686 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F361326CAA0FC00462686 /* Session.swift */; };
 		069F361926CAA19300462686 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F361826CAA19300462686 /* AuthViewController.swift */; };
 		069F361B26CAA1B700462686 /* DisplayFrendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F361A26CAA1B700462686 /* DisplayFrendsTableViewController.swift */; };
+		069F362026CD6D2D00462686 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F361F26CD6D2D00462686 /* Data+PrettyJSON.swift */; };
+		069F362326CD6F7A00462686 /* Frends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F362226CD6F7A00462686 /* Frends.swift */; };
 		06C25A6D26C914AA00470886 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C25A6C26C914AA00470886 /* NetworkViewController.swift */; };
 		B2502A52B942E88A4CB3C7F0 /* Pods_client_server_1436.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99358BE2F5AF3B43FB7123F2 /* Pods_client_server_1436.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,8 @@
 		069F361326CAA0FC00462686 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		069F361826CAA19300462686 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		069F361A26CAA1B700462686 /* DisplayFrendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFrendsTableViewController.swift; sourceTree = "<group>"; };
+		069F361F26CD6D2D00462686 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
+		069F362226CD6F7A00462686 /* Frends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frends.swift; sourceTree = "<group>"; };
 		06C25A6C26C914AA00470886 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		405EEE1D175207D9540F33EF /* Pods-client-server-1436.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1436.debug.xcconfig"; path = "Target Support Files/Pods-client-server-1436/Pods-client-server-1436.debug.xcconfig"; sourceTree = "<group>"; };
 		99358BE2F5AF3B43FB7123F2 /* Pods_client_server_1436.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client_server_1436.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,8 @@
 		066BCE4426CA9C8700050F56 /* vk-api */ = {
 			isa = PBXGroup;
 			children = (
+				069F362126CD6F6D00462686 /* Models */,
+				069F361C26CD6B4D00462686 /* Extension */,
 				069F361526CAA15500462686 /* Modules */,
 				066BCE4526CA9CE100050F56 /* service */,
 			);
@@ -123,6 +129,22 @@
 				069F361A26CAA1B700462686 /* DisplayFrendsTableViewController.swift */,
 			);
 			path = "Display Frends";
+			sourceTree = "<group>";
+		};
+		069F361C26CD6B4D00462686 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				069F361F26CD6D2D00462686 /* Data+PrettyJSON.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		069F362126CD6F6D00462686 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				069F362226CD6F7A00462686 /* Frends.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		06C25A6626C8E00600470886 /* app */ = {
@@ -280,6 +302,8 @@
 				069F361926CAA19300462686 /* AuthViewController.swift in Sources */,
 				06C25A6D26C914AA00470886 /* NetworkViewController.swift in Sources */,
 				068E4A8226C66E4900AD9EE7 /* SceneDelegate.swift in Sources */,
+				069F362026CD6D2D00462686 /* Data+PrettyJSON.swift in Sources */,
+				069F362326CD6F7A00462686 /* Frends.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

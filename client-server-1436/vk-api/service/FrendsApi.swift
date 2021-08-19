@@ -32,8 +32,9 @@ final class FrendsApi{
         let url = baseUrl + method
         AF.request(url, method: .get, parameters: parameters).responseJSON {
             response in
-            
             print(response.result)
+            print("_----------------------------------------------------")
+            print(response.data?.prettyJSON)
             
         }
         
@@ -94,6 +95,8 @@ final class FrendsApi{
             response in
             
             print(response.result)
+            print("_----------------------------------------------------")
+            print(response.data?.prettyJSON)
             
         }
         

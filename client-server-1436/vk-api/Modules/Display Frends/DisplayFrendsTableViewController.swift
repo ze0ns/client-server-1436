@@ -16,22 +16,23 @@ class DisplayFrendsTableViewController: UITableViewController {
         //Получаем список друзей
         frendsAPI.getFrends {user in
             //получаем список пользователей
+            
             //self.frends = users
             //tableView.reload
-            
-        }
-        //Получаем все фотографии
-        frendsAPI.getPhotos{user in
 
         }
-        //Получаем список групп пользователя
-        frendsAPI.getGroups{user in
-               
-        }
-        //Поиск группы по запросу, сейчас стоит "Музыка"
-        frendsAPI.searchGroups{user in
-            
-         }
+//        //Получаем все фотографии
+//        frendsAPI.getPhotos{user in
+//
+//        }
+//        //Получаем список групп пользователя
+//        frendsAPI.getGroups{user in
+//               
+//        }
+//        //Поиск группы по запросу, сейчас стоит "Музыка"
+//        frendsAPI.searchGroups{user in
+//            
+//         }
         
     }
 
