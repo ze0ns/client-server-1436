@@ -9,17 +9,20 @@ import UIKit
 
 class DisplayFrendsTableViewController: UITableViewController {
 
-    let frendsAPI = FrendsApi()
+    let friendsAPI = FriendsApi()
+    var friends: [Friend] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Регистрируем нашу кастомную ячейку
+          tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
         //Получаем список друзей
-        frendsAPI.getFrends {user in
-            //получаем список пользователей
+        friendsAPI.getFrends { [weak self] users in
             
-            //self.frends = users
-            //tableView.reload
-
+            self?.friends = users!
+            self?.tableView.reloadData()
+            
         }
 //        //Получаем все фотографии
 //        frendsAPI.getPhotos{user in
@@ -38,15 +41,21 @@ class DisplayFrendsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+             // #warning Incomplete implementation, return the number of rows
+             return friends.count
+         }
+
+         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+
+             let friend: Friend = friends[indexPath.row]
+
+             cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
+
+             return cell
+         }
 
    
 

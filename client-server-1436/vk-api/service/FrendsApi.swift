@@ -12,13 +12,13 @@ struct User{
     
 }
 
-final class FrendsApi{
+final class FriendsApi{
     let baseUrl = "https://api.vk.com/method"
     let token = Session.shared.token
     let clientId = Session.shared.userId
     let version = "5.21"
     
-    func getFrends(comletion: @escaping(([User]?)->())){
+    func getFrends(comletion: @escaping(([Friend]?)->())){
         let method = "/friends.get"
         
         let parameters: Parameters = [
@@ -32,16 +32,23 @@ final class FrendsApi{
         let url = baseUrl + method
         AF.request(url, method: .get, parameters: parameters).responseJSON {
             response in
-            print(response.result)
-            print("_----------------------------------------------------")
-            print(response.data?.prettyJSON)
-            
+          
+            guard let data = response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
+           
+            //добавим проверку на ошибку, если будет ошибка она выведется в консоль
+            do {
+                let friendsResponse = try? JSONDecoder().decode(FriendsResponse.self, from: data)
+                
+                let friends = friendsResponse?.response.items
+                
+                comletion(friends)
+            }
+            catch{
+                print(error)
+            }
         }
         
     }
-    
-    //https://vk.com/dev/photos.getAll?params[owner_id]=1&params[extended]=1&params[count]=3&params[photo_sizes]=1&params[no_service_albums]=0&params[need_hidden]=0&params[skip_hidden]=1&params[v]=5.77
-    
     
     func getPhotos(comletion: @escaping(([User]?)->())){
         let method = "/photos.getAll"
@@ -95,8 +102,7 @@ final class FrendsApi{
             response in
             
             print(response.result)
-            print("_----------------------------------------------------")
-            print(response.data?.prettyJSON)
+
             
         }
         
