@@ -4,6 +4,8 @@
 //
 //  Created by Oschepkov Aleksandr on 19.08.2021.
 //
+//print("----------------PRINT-----------------")
+//print(response.data?.prettyJSON)
 
 import Foundation
 import Alamofire
@@ -32,7 +34,7 @@ final class GroupsAPI{
         AF.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             
-            print(response.result)
+        
             
         }
         
@@ -51,7 +53,8 @@ final class GroupsAPI{
             
             
             
-            print(response.result)
+            print("----------------PRINT-----------------")
+            print(response.data?.prettyJSON)
 
             
         }

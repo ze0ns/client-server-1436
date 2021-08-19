@@ -10,32 +10,27 @@ import UIKit
 class DisplayFrendsTableViewController: UITableViewController {
 
     let friendsAPI = FriendsApi()
+    let froupsAPI = GroupsAPI()
+    let photosAPI = PhotosAPI()
+    
     var friends: [Friend] = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Регистрируем нашу кастомную ячейку
           tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        //Получаем список друзей
+        //Получаем список друзей, добавляем его в таблицу
         friendsAPI.getFrends { [weak self] users in
             
             self?.friends = users!
             self?.tableView.reloadData()
             
         }
-        //Получаем все фотографии
-        friendsAPI.getPhotos{user in
-
-        }
-//        //Получаем список групп пользователя
-//        frendsAPI.getGroups{user in
-//               
-//        }
-//        //Поиск группы по запросу, сейчас стоит "Музыка"
-//        frendsAPI.searchGroups{user in
-//            
-//         }
+        photosAPI.getPhotos{users1 in}
+        froupsAPI.searchGroups{users2 in}
         
     }
 
