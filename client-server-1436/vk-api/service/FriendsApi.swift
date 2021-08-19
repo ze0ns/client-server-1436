@@ -1,5 +1,5 @@
 //
-//  FrendsApi.swift
+//  FriendsApi.swift
 //  client-server-1436
 //
 //  Created by Oschepkov Aleksandr on 18.08.2021.
@@ -49,7 +49,7 @@ final class FriendsApi{
         }
         
     }
-    
+    //получаем фотографии
     func getPhotos(comletion: @escaping(([User]?)->())){
         let method = "/photos.getAll"
         
@@ -66,11 +66,27 @@ final class FriendsApi{
         AF.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             
-            print(response.result)
+            guard let data = response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
+            
+            //добавим проверку на ошибку, если будет ошибка она выведется в консоль
+            do {
+                let friendsResponse = try? JSONDecoder().decode(FriendsResponse.self, from: data)
+                
+                let friends = friendsResponse?.response.items
+                
+                comletion([])
+            }
+            catch{
+                print(error)
+            }
+            
             
         }
         
     }
+    
+    
+    
     func getGroups(comletion: @escaping(([User]?)->())){
         let method = "/groups.get"
         
@@ -100,6 +116,8 @@ final class FriendsApi{
         let url = baseUrl + method
         AF.request(url, method: .get, parameters: parameters).responseJSON {
             response in
+            
+            
             
             print(response.result)
 

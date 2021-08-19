@@ -24,10 +24,10 @@ class DisplayFrendsTableViewController: UITableViewController {
             self?.tableView.reloadData()
             
         }
-//        //Получаем все фотографии
-//        frendsAPI.getPhotos{user in
-//
-//        }
+        //Получаем все фотографии
+        friendsAPI.getPhotos{user in
+
+        }
 //        //Получаем список групп пользователя
 //        frendsAPI.getGroups{user in
 //               
