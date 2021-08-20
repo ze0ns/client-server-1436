@@ -8,18 +8,18 @@
 import Foundation
 
 // MARK: - FriendsResponse
-struct FriendsResponse: Codable {
+class FriendsResponse: Codable {
     let response: Friends
 }
 
 // MARK: - Response
-struct Friends: Codable {
+class Friends: Codable {
     let count: Int
     let items: [Friend]
 }
 
 // MARK: - Item
-struct Friend: Codable {
+class Friend: Codable {
     let id: Int
     let lastName: String
     let photo50: String

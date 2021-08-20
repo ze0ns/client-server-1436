@@ -8,18 +8,18 @@
 import Foundation
 
 // MARK: - GetPhotos
-struct GetPhotos: Codable {
+class GetPhotos: Codable {
     let response: Response
 }
 
 // MARK: - Response
-struct Response: Codable {
+class Response: Codable {
     let count: Int
     let items: [Item]
 }
 
 // MARK: - Item
-struct Item: Codable {
+class Item: Codable {
     let id: Int
     let photo2560, photo807, photo1280: String
     let width: Int

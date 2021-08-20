@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - GetPhotos
-struct getGroups: Codable {
+class getGroups: Codable {
     let response: ResponseGetGroups
 }
 
 // MARK: - Response
-struct ResponseGetGroups: Codable {
+class ResponseGetGroups: Codable {
     let count: Int
     let items: [Int]
 }
