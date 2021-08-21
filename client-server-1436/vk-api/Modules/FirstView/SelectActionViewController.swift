@@ -20,9 +20,11 @@ class SelectActionViewController: UIViewController {
     }
     
     @IBAction func photosViewAction(_ sender: Any) {
-        let photosVC = DisplayPhotoViewController()
+        
+        guard let photosVC = storyboard?.instantiateViewController(withIdentifier: "DisplayPhotoViewController") else {return}
         self.navigationController?.pushViewController(photosVC, animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white

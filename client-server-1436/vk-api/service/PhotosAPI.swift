@@ -39,8 +39,8 @@ final class PhotosAPI{
             
           do {
               
-                let photosResponse = try JSONDecoder().decode(PhotoResponse.self, from: data)
-                let photos = photosResponse.response.items
+            let photosResponse = try JSONDecoder().decode(PhotoResponse.self, from: data)
+            let photos = photosResponse.response.items
 
                 comletion(photos)
             } catch DecodingError.keyNotFound(let key, let context) {

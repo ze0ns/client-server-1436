@@ -156,8 +156,8 @@
 		069F362126CD6F6D00462686 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				069F362226CD6F7A00462686 /* Friends.swift */,
 				06C4826826CE4A79007D28E3 /* getPhoto.swift */,
+				069F362226CD6F7A00462686 /* Friends.swift */,
 				06C4826E26CE5DF8007D28E3 /* groups.swift */,
 				06C4827026CE5F5B007D28E3 /* searchGroups.swift */,
 			);

@@ -41,6 +41,7 @@ final class FriendsApi{
                 
                 let friends = friendsResponse?.response.items
                 
+                
                 comletion(friends)
             }
             catch{

@@ -32,32 +32,36 @@ final class DisplayPhotoViewController: UIViewController {
             self?.photos = users!
             self?.collectionView?.reloadData()
 
-            
+
         }
+       
+
         
     }
+
+
 }
 extension DisplayPhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photos.count
+        //
+        return photos.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableNIB, for: indexPath) as! photosCollectionViewCell
         let photo = photos[indexPath.row]
-        let urlUmage = URL(string:photo.photo130)!
-        
-        if let data = try? Data(contentsOf: urlUmage) {
+        let urlImage = URL(string:photo.photo130)!
+        if let data = try? Data(contentsOf: urlImage) {
             // Create Image and Update Image View
             cell.photosImage.image = UIImage(data: data)
         }
-        
+
         return cell
     }
-    
+
 }
