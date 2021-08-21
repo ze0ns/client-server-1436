@@ -8,18 +8,18 @@
 import Foundation
 
 // MARK: - SearchGroups
-struct SearchGroups: Codable {
+class SearchGroups: Codable {
     let response: ResponseSearchGroups
 }
 
 // MARK: - Response
-struct ResponseSearchGroups: Codable {
+class ResponseSearchGroups: Codable {
     let count: Int
     let items: [ItemSearchGroups]
 }
 
 // MARK: - Item
-struct ItemSearchGroups: Codable {
+class ItemSearchGroups: Codable {
     let isMember, id: Int
     let photo100: String
     let isAdvertiser, isAdmin: Int

@@ -10,13 +10,11 @@ import UIKit
 class DisplayFrendsTableViewController: UITableViewController {
 
     let friendsAPI = FriendsApi()
-    let froupsAPI = GroupsAPI()
-    let photosAPI = PhotosAPI()
     
     var friends: [Friend] = []
     
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Регистрируем нашу кастомную ячейку
@@ -29,9 +27,7 @@ class DisplayFrendsTableViewController: UITableViewController {
             self?.tableView.reloadData()
             
         }
-        photosAPI.getPhotos{users1 in}
-        froupsAPI.searchGroups{users2 in}
-        
+    
     }
 
     // MARK: - Table view data source

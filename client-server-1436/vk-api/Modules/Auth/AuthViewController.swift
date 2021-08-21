@@ -76,10 +76,9 @@ extension AuthViewController: WKNavigationDelegate {
         Session.shared.token = token
         Session.shared.userId = Int(userId) ?? 0
         
-        let frendsVC = DisplayFrendsTableViewController()
-        navigationController?.pushViewController(frendsVC, animated: true)
-        
-        
+        guard let SelectActionVC = storyboard?.instantiateViewController(withIdentifier: "SelectActionViewController") else {return}
+        navigationController?.pushViewController(SelectActionVC, animated: true)
         decisionHandler(.cancel)
+        
     }
 }

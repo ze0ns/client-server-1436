@@ -19,7 +19,7 @@ final class PhotosAPI{
     
     
     //получаем фотографии
-    func getPhotos(comletion: @escaping(([User1]?)->())){
+    func getPhotos(comletion: @escaping(([Photo]?)->())){
         let method = "/photos.getAll"
         
         let parameters: Parameters = [
@@ -37,18 +37,25 @@ final class PhotosAPI{
             
             guard let data = response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
             
-            //добавим проверку на ошибку, если будет ошибка она выведется в консоль
-            do {
-                let friendsResponse = try? JSONDecoder().decode(FriendsResponse.self, from: data)
-                
-                let friends = friendsResponse?.response.items
-                
-                comletion([])
+          do {
+              
+                let photosResponse = try JSONDecoder().decode(PhotoResponse.self, from: data)
+                let photos = photosResponse.response.items
+
+                comletion(photos)
+            } catch DecodingError.keyNotFound(let key, let context) {
+                Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
+            } catch DecodingError.valueNotFound(let type, let context) {
+                Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
+            } catch DecodingError.typeMismatch(let type, let context) {
+                Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
+            } catch DecodingError.dataCorrupted(let context) {
+                Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
+            } catch let error as NSError {
+                NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
             }
-            catch{
-                print(error)
-            }
-            
+
+
             
         }
         
