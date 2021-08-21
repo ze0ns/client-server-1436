@@ -21,7 +21,7 @@ final class GroupsAPI{
     let version = "5.21"
         
     
-    func getGroups(comletion: @escaping(([User2]?)->())){
+    func getGroups(comletion: @escaping(([Int]?)->())){
         let method = "/groups.get"
         
         let parameters: Parameters = [
@@ -33,12 +33,31 @@ final class GroupsAPI{
         let url = baseUrl + method
         AF.request(url, method: .get, parameters: parameters).responseJSON {
             response in
-            
-        
-            
+        guard let data = response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
+           
+            //добавим проверку на ошибку, если будет ошибка она выведется в консоль
+            do {
+                let groupResponse = try? JSONDecoder().decode(Groups.self, from: data)
+                
+                let groups = groupResponse?.response.items
+                
+                
+                comletion(groups)
+            } catch DecodingError.keyNotFound(let key, let context) {
+                Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
+            } catch DecodingError.valueNotFound(let type, let context) {
+                Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
+            } catch DecodingError.typeMismatch(let type, let context) {
+                Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
+            } catch DecodingError.dataCorrupted(let context) {
+                Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
+            } catch let error as NSError {
+                NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
+            }
         }
+      }
         
-    }
+
     func searchGroups(comletion: @escaping(([User2]?)->())){
         let method = "/groups.search"
         

@@ -90,6 +90,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbL-lh-CMx">
                                 <rect key="frame" x="146" y="304" width="122" height="30"/>
                                 <state key="normal" title="Показать группы"/>
+                                <connections>
+                                    <action selector="groupsViewActions:" destination="hbE-T7-o7l" eventType="touchUpInside" id="H6e-eg-QSY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2sK-Qx-lu9"/>
@@ -111,6 +114,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kx-3M-X4r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2426.0869565217395" y="-38.169642857142854"/>
+        </scene>
+        <!--Display Groups Table View Controller-->
+        <scene sceneID="Ekv-Hk-uxB">
+            <objects>
+                <viewController storyboardIdentifier="DisplayGroupsTableViewController" id="j2E-uJ-5hx" customClass="DisplayGroupsTableViewController" customModule="client_server_1436" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DBQ-L5-UcX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SlP-Pw-GBd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hd-Qv-HVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3392" y="369"/>
         </scene>
         <!--Display Photo View Controller-->
         <scene sceneID="ZdT-dm-QB0">
@@ -160,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOQ-s1-72u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3396" y="233"/>
+            <point key="canvasLocation" x="4097" y="-38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7yE-OU-8su">

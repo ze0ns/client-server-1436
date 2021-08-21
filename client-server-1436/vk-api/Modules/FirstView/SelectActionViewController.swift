@@ -25,6 +25,11 @@ class SelectActionViewController: UIViewController {
         self.navigationController?.pushViewController(photosVC, animated: true)
     }
     
+    @IBAction func groupsViewActions(_ sender: Any) {
+        let groupsVC = DisplayGroupsTableViewController()
+        self.navigationController?.pushViewController(groupsVC, animated: true)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white

@@ -3,23 +3,31 @@
 //  client-server-1436
 //
 //  Created by Oschepkov Aleksandr on 19.08.2021.
-//
 
 import Foundation
-
+/*
 // MARK: - SearchGroups
 class SearchGroups: Codable {
-    let response: ResponseSearchGroups
+    let response: Response
+
+    init(response: Response) {
+        self.response = response
+    }
 }
 
 // MARK: - Response
-class ResponseSearchGroups: Codable {
+class Response: Codable {
     let count: Int
-    let items: [ItemSearchGroups]
+    let items: [Item]
+
+    init(count: Int, items: [Item]) {
+        self.count = count
+        self.items = items
+    }
 }
 
 // MARK: - Item
-class ItemSearchGroups: Codable {
+class Item: Codable {
     let isMember, id: Int
     let photo100: String
     let isAdvertiser, isAdmin: Int
@@ -41,9 +49,24 @@ class ItemSearchGroups: Codable {
         case name
         case isClosed = "is_closed"
     }
+
+    init(isMember: Int, id: Int, photo100: String, isAdvertiser: Int, isAdmin: Int, photo50: String, photo200: String, type: TypeEnum, screenName: String, name: String, isClosed: Int) {
+        self.isMember = isMember
+        self.id = id
+        self.photo100 = photo100
+        self.isAdvertiser = isAdvertiser
+        self.isAdmin = isAdmin
+        self.photo50 = photo50
+        self.photo200 = photo200
+        self.type = type
+        self.screenName = screenName
+        self.name = name
+        self.isClosed = isClosed
+    }
 }
 
 enum TypeEnum: String, Codable {
     case group = "group"
     case page = "page"
 }
+*/

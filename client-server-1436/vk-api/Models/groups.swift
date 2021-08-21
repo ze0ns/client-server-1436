@@ -7,13 +7,22 @@
 
 import Foundation
 
-// MARK: - GetPhotos
-class getGroups: Codable {
-    let response: ResponseGetGroups
+// MARK: - Groups
+class Groups: Codable {
+    let response: Response
+
+    init(response: Response) {
+        self.response = response
+    }
 }
 
 // MARK: - Response
-class ResponseGetGroups: Codable {
+class Response: Codable {
     let count: Int
     let items: [Int]
+
+    init(count: Int, items: [Int]) {
+        self.count = count
+        self.items = items
+    }
 }
