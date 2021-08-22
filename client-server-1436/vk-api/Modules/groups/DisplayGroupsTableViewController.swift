@@ -7,29 +7,77 @@
 
 
 import UIKit
+import Alamofire
+import DynamicJSON
 
 class DisplayGroupsTableViewController: UITableViewController {
 
     let groupsAPI = GroupsAPI()
     
     var groups: [Int] = []
+    var groupsDet: String = ""
+    var name: String = ""
+    var idGroup: Int = 35983383
+    var elements: Int = 0
     
+    var dict : Dictionary<Int, String> = [:]
     
+    let baseUrl = "https://api.vk.com/method"
+    let token = Session.shared.token
+    let clientId = Session.shared.userId
+    let version = "5.21"
+    
+    func searchById(id: Int) -> String
+     {
+        let method = "/groups.getById"
+        var nameGroup: String = ""
 
+        let parameters: Parameters = [
+            "access_token": Session.shared.token,
+            "v":version,
+            "group_id":id,
+            "fields": "description"
+        ]
+        let url = baseUrl + method
+        AF.request(url, method: .get, parameters: parameters).responseJSON {
+            response in
+           
+            
+            guard let data =  response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
+      
+            guard let items = JSON(data).response.array else {return}
+            let groups = items.map {GroupsDynamic(json: $0)}
+            let name = groups[0].name
+            nameGroup = name
+        }
+        print(name)
+        print(nameGroup)
+        return name
+}
+    
+    // Метод, вывести информацию о группе по ID
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Регистрируем нашу кастомную ячейку
           tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        //Получаем список друзей, добавляем его в таблицу
+        //Получаем список group, добавляем его в таблицу
         groupsAPI.getGroups{ [weak self] users in
 
             self?.groups = users!
+            let counts = users!.count
+            var el = 0
+            while counts > el {
+                let key = users![el]
+                self?.dict.updateValue(self!.searchById(id: key), forKey: key)
+                el = el + 1
+            }
+            
             self?.tableView.reloadData()
-
+            
         }
-    
-    }
+}
 
     // MARK: - Table view data source
 
@@ -43,11 +91,11 @@ class DisplayGroupsTableViewController: UITableViewController {
 
              let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-             let group: Int = groups[indexPath.row]
-
-            cell.textLabel?.text = "\(group)"
-
-             return cell
+            let group: Int = groups[indexPath.row]
+           
+             cell.textLabel?.text = "Строка \(group)"
+            
+            return cell
          }
 
 
