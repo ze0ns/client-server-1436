@@ -18,8 +18,8 @@ class Groups: Codable {
 
 // MARK: - Response
 class Response: Codable {
-    let count: Int
-    let items: [Int]
+    @objc dynamic var count: Int
+    @objc dynamic var items: [Int]
 
     init(count: Int, items: [Int]) {
         self.count = count

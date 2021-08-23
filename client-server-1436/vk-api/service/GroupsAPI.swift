@@ -25,7 +25,6 @@ final class GroupsAPI{
     func searchById(id: Int, comletion: @escaping((String)->()))
      {
         let method = "/groups.getById"
-        var nameGroup: String = ""
 
         let parameters: Parameters = [
             "access_token": Session.shared.token,
@@ -85,7 +84,7 @@ final class GroupsAPI{
       }
        
 
-   
+  /*
     //метод, поиск группы по ключевому слову
     func searchGroups(comletion: @escaping(([User2]?)->())){
             let method = "/groups.search"
@@ -105,6 +104,7 @@ final class GroupsAPI{
 
             }
     }
+    */
 }
 
 

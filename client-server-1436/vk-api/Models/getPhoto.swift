@@ -1,4 +1,5 @@
 import Foundation
+import RealmSwift
 
 // MARK: - PhotoResponse
 class PhotoResponse: Codable {
@@ -7,11 +8,6 @@ class PhotoResponse: Codable {
         self.response = response
     }
 }
-
-//init(count: Int, items: [SearchItem]) {
-//    self.count = count
-//    self.SearchItem = items
-//}
 
 // MARK: - Response
 struct Photos: Codable {
@@ -26,16 +22,16 @@ struct Photos: Codable {
 
 // MARK: - Item
 class Photo: Codable {
-    let albumID, height: Int
-    let photo130: String
-    let id, width, date: Int
-    let text: String
-    let photo75: String
-    let hasTags: Bool
-    let ownerID: Int
-    let photo604: String
-    let photo807, photo1280, photo2560: String?
-    let postID: Int?
+    @objc dynamic var albumID, height: Int
+    @objc dynamic var photo130: String
+    @objc dynamic var id, width, date: Int
+    @objc dynamic var text: String
+    @objc dynamic var photo75: String
+    @objc dynamic var hasTags: Bool
+    @objc dynamic var ownerID: Int
+    @objc dynamic var photo604: String
+    @objc dynamic var photo807, photo1280, photo2560: String?
+   
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"
@@ -49,10 +45,10 @@ class Photo: Codable {
         case photo807 = "photo_807"
         case photo1280 = "photo_1280"
         case photo2560 = "photo_2560"
-        case postID = "post_id"
+       
     }
     
-    init(albumID: Int, height: Int, photo130: String, id: Int, width: Int, date: Int,text: String,photo75: String,hasTags: Bool,ownerID: Int,photo604: String, photo807: String?, photo1280: String?, photo2560: String?, postID: Int?) {
+    init(albumID: Int, height: Int, photo130: String, id: Int, width: Int, date: Int,text: String,photo75: String,hasTags: Bool,ownerID: Int,photo604: String, photo807: String?, photo1280: String?, photo2560: String?) {
         self.albumID = albumID
         self.height = height
         self.photo130 = photo130
@@ -67,7 +63,7 @@ class Photo: Codable {
         self.photo807 = photo807
         self.photo1280 = photo1280
         self.photo2560 = photo2560
-        self.postID = postID
+       
 
     }
 }
