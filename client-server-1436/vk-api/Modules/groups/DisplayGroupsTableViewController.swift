@@ -19,7 +19,7 @@ class DisplayGroupsTableViewController: UITableViewController {
     var name: String = ""
     var idGroup: Int = 35983383
     var elements: Int = 0
-    
+    var nameGroups = "" //имя группы
     var dict : Dictionary<Int, String> = [:]
     
     let baseUrl = "https://api.vk.com/method"
@@ -27,7 +27,10 @@ class DisplayGroupsTableViewController: UITableViewController {
     let clientId = Session.shared.userId
     let version = "5.21"
     
-    func searchById(id: Int) -> String
+    
+    
+    //Функция преобразования
+    func searchById(id: Int, comletion: @escaping((String)->()))
      {
         let method = "/groups.getById"
         var nameGroup: String = ""
@@ -48,11 +51,8 @@ class DisplayGroupsTableViewController: UITableViewController {
             guard let items = JSON(data).response.array else {return}
             let groups = items.map {GroupsDynamic(json: $0)}
             let name = groups[0].name
-            nameGroup = name
+            comletion(name)
         }
-        print(name)
-        print(nameGroup)
-        return name
 }
     
     // Метод, вывести информацию о группе по ID
@@ -67,15 +67,19 @@ class DisplayGroupsTableViewController: UITableViewController {
 
             self?.groups = users!
             let counts = users!.count
+            
             var el = 0
             while counts > el {
                 let key = users![el]
-                self?.dict.updateValue(self!.searchById(id: key), forKey: key)
+                self?.searchById(id: key){ [weak self] names in
+                    //self!.nameGroups = names
+                    self?.dict.updateValue(names, forKey: key)
+                    self?.tableView.reloadData()
+                }
+                
                 el = el + 1
             }
-            
-            self?.tableView.reloadData()
-            
+ 
         }
 }
 
@@ -92,8 +96,9 @@ class DisplayGroupsTableViewController: UITableViewController {
              let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
             let group: Int = groups[indexPath.row]
-           
-             cell.textLabel?.text = "Строка \(group)"
+            let n = dict[group]
+
+             cell.textLabel?.text = "\(n)"
             
             return cell
          }
