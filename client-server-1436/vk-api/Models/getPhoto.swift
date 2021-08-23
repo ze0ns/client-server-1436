@@ -1,18 +1,31 @@
 import Foundation
 
 // MARK: - PhotoResponse
-struct PhotoResponse: Codable {
+class PhotoResponse: Codable {
     let response: Photos
+    init(response: Photos){
+        self.response = response
+    }
 }
+
+//init(count: Int, items: [SearchItem]) {
+//    self.count = count
+//    self.SearchItem = items
+//}
 
 // MARK: - Response
 struct Photos: Codable {
     let count: Int
     let items: [Photo]
+    
+    init(count: Int, items:[Photo]) {
+        self.count = count
+        self.items = items
+    }
 }
 
 // MARK: - Item
-struct Photo: Codable {
+class Photo: Codable {
     let albumID, height: Int
     let photo130: String
     let id, width, date: Int
@@ -37,5 +50,24 @@ struct Photo: Codable {
         case photo1280 = "photo_1280"
         case photo2560 = "photo_2560"
         case postID = "post_id"
+    }
+    
+    init(albumID: Int, height: Int, photo130: String, id: Int, width: Int, date: Int,text: String,photo75: String,hasTags: Bool,ownerID: Int,photo604: String, photo807: String?, photo1280: String?, photo2560: String?, postID: Int?) {
+        self.albumID = albumID
+        self.height = height
+        self.photo130 = photo130
+        self.id = id
+        self.width = width
+        self.date = date
+        self.text = text
+        self.photo75 = photo75
+        self.hasTags = hasTags
+        self.ownerID = ownerID
+        self.photo604 = photo604
+        self.photo807 = photo807
+        self.photo1280 = photo1280
+        self.photo2560 = photo2560
+        self.postID = postID
+
     }
 }

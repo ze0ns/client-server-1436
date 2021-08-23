@@ -5,29 +5,29 @@
 //  Created by Oschepkov Aleksandr on 19.08.2021.
 
 import Foundation
-/*
+
 // MARK: - SearchGroups
 class SearchGroups: Codable {
-    let response: Response
+    let response: SearchGroup
 
-    init(response: Response) {
+    init(response: SearchGroup) {
         self.response = response
     }
 }
 
 // MARK: - Response
-class Response: Codable {
+class SearchGroup: Codable {
     let count: Int
-    let items: [Item]
+    let SearchItem: [SearchItem]
 
-    init(count: Int, items: [Item]) {
+    init(count: Int, items: [SearchItem]) {
         self.count = count
-        self.items = items
+        self.SearchItem = items
     }
 }
 
 // MARK: - Item
-class Item: Codable {
+class SearchItem: Codable {
     let isMember, id: Int
     let photo100: String
     let isAdvertiser, isAdmin: Int
@@ -69,4 +69,4 @@ enum TypeEnum: String, Codable {
     case group = "group"
     case page = "page"
 }
-*/
+

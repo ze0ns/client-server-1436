@@ -25,7 +25,7 @@ final class GroupsAPI{
     func searchById(id: Int, comletion: @escaping((String)->()))
      {
         let method = "/groups.getById"
-         var nameGroup: String = ""
+        var nameGroup: String = ""
 
         let parameters: Parameters = [
             "access_token": Session.shared.token,
@@ -40,13 +40,11 @@ final class GroupsAPI{
             
             guard let data =  response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
       
-            guard let items =  JSON(data).response.array else {return}
+            guard let items = JSON(data).response.array else {return}
             let groups = items.map {GroupsDynamic(json: $0)}
             let name = groups[0].name
-            nameGroup = name
-            comletion(nameGroup)
-    }
-       
+            comletion(name)
+        }
 }
     
     //метод, вывести все группы пользователя
