@@ -12,7 +12,7 @@ struct User{
     
 }
 
-final class FriendsApi{
+final class FriendsAPI{
     let baseUrl = "https://api.vk.com/method"
     let token = Session.shared.token
     let clientId = Session.shared.userId

@@ -21,7 +21,7 @@ struct Photos: Codable {
 }
 
 // MARK: - Item
-class Photo: Codable {
+class Photo: Object, Codable {
     @objc dynamic var albumID, height: Int
     @objc dynamic var photo130: String
     @objc dynamic var id, width, date: Int
@@ -46,24 +46,5 @@ class Photo: Codable {
         case photo1280 = "photo_1280"
         case photo2560 = "photo_2560"
        
-    }
-    
-    init(albumID: Int, height: Int, photo130: String, id: Int, width: Int, date: Int,text: String,photo75: String,hasTags: Bool,ownerID: Int,photo604: String, photo807: String?, photo1280: String?, photo2560: String?) {
-        self.albumID = albumID
-        self.height = height
-        self.photo130 = photo130
-        self.id = id
-        self.width = width
-        self.date = date
-        self.text = text
-        self.photo75 = photo75
-        self.hasTags = hasTags
-        self.ownerID = ownerID
-        self.photo604 = photo604
-        self.photo807 = photo807
-        self.photo1280 = photo1280
-        self.photo2560 = photo2560
-       
-
     }
 }

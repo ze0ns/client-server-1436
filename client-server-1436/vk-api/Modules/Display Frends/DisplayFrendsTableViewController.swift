@@ -9,7 +9,7 @@ import UIKit
 
 class DisplayFrendsTableViewController: UITableViewController {
 
-    let friendsAPI = FriendsApi()
+    let friendsAPI = FriendsAPI()
     
     var friends: [Friend] = []
     
@@ -42,7 +42,7 @@ class DisplayFrendsTableViewController: UITableViewController {
              let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
              let friend: Friend = friends[indexPath.row]
-
+            
              cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
 
              return cell

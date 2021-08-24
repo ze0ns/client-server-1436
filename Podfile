@@ -8,6 +8,7 @@ pod 'Alamofire'
 pod 'DynamicJSON'
 
 pod 'RealmSwift'
+
 #pod 'Firebase'
 
 

@@ -17,7 +17,7 @@ final class DisplayPhotoViewController: UIViewController {
     
     
     @IBOutlet var collectionView: UICollectionView!
-    let reusableNIB = "photosCollectionViewCell"
+    let reusableNIB = "PhotosCollectionViewCell"
     
     
     override func viewDidLoad() {
@@ -53,7 +53,7 @@ extension DisplayPhotoViewController: UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableNIB, for: indexPath) as! photosCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableNIB, for: indexPath) as! PhotosCollectionViewCell
         let photo = photos[indexPath.row]
         let urlImage = URL(string:photo.photo130)!
         if let data = try? Data(contentsOf: urlImage) {

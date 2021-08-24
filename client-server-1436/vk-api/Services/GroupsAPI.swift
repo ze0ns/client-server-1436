@@ -35,10 +35,7 @@ final class GroupsAPI{
         let url = baseUrl + method
         AF.request(url, method: .get, parameters: parameters).responseJSON {
             response in
-           
-            
             guard let data =  response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
-      
             guard let items = JSON(data).response.array else {return}
             let groups = items.map {GroupsDynamic(json: $0)}
             let name = groups[0].name
@@ -47,27 +44,26 @@ final class GroupsAPI{
 }
     
     //метод, вывести все группы пользователя
-    func getGroups(comletion: @escaping(([Int]?)->())){
+    func getGroups(comletion: @escaping(([Group]?)->())){
         let method = "/groups.get"
         
         let parameters: Parameters = [
             "owner_id": clientId,
             "access_token": Session.shared.token,
             "v":version,
-            "extended": 0
+            "extended": 1
             ]
         let url = baseUrl + method
         AF.request(url, method: .get, parameters: parameters).responseJSON {
             response in
-        guard let data = response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
+            guard let data = response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
            
             //добавим проверку на ошибку, если будет ошибка она выведется в консоль
             do {
                 let groupResponse = try? JSONDecoder().decode(Groups.self, from: data)
                 
                 let groups = groupResponse?.response.items
-                
-                
+
                 comletion(groups)
             } catch DecodingError.keyNotFound(let key, let context) {
                 Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
