@@ -10,7 +10,7 @@ import UIKit
 class DisplayFrendsTableViewController: UITableViewController {
 
     let friendsAPI = FriendsAPI()
-    
+    let friendDB = FriendsDB()
     var friends: [Friend] = []
     
     
@@ -18,15 +18,9 @@ class DisplayFrendsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Регистрируем нашу кастомную ячейку
-          tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
-        //Получаем список друзей, добавляем его в таблицу
-        friendsAPI.getFrends { [weak self] users in
-            
-            self?.friends = users!
-            self?.tableView.reloadData()
-            
-        }
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        friends = friendDB.fetch()
+
     
     }
 

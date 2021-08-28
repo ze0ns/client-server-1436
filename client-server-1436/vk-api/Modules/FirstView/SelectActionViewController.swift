@@ -31,6 +31,9 @@ class SelectActionViewController: UIViewController {
   
     }
     
+    @IBAction func deletaDataAction(_ sender: Any) {
+        friendDB.delete()
+    }
     
     @IBAction func frendsViewActions(_ sender: Any) {
         let FriendsVC = DisplayFrendsTableViewController()

@@ -12,7 +12,7 @@ import Alamofire
 class DisplayGroupsTableViewController: UITableViewController {
 
         let groupsAPI = GroupsAPI()
-        
+        let groupDB = GroupsDB()
         var groups: [Group] = []
         
         
@@ -21,14 +21,8 @@ class DisplayGroupsTableViewController: UITableViewController {
             super.viewDidLoad()
             //Регистрируем нашу кастомную ячейку
               tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+            groups = groupDB.fetch()
             
-            //Получаем список друзей, добавляем его в таблицу
-            groupsAPI.getGroups{ [weak self] users in
-                
-                self?.groups = users!
-                self?.tableView.reloadData()
-                
-            }
         
         }
 

@@ -1,32 +1,31 @@
 //
-//  GroupsDB.swift
+//  PhotoDB.swift
 //  client-server-1436
 //
 //  Created by zeons on 28.08.2021.
 //
+
 import Foundation
 import RealmSwift
 
 
 
-class GroupsDB {
+class PhotoDB {
 
      let config = Realm.Configuration(schemaVersion: 0)
      lazy var mainRealm = try! Realm(configuration: config)
-     var groups: [Group] = []
+     var photos: [Photo] = []
     
     
-     func addData(_ user: [Group]) {
+     func addData(_ user: [Photo]) {
         mainRealm.beginWrite()
-        groups = user
-        let group = Group()
-        let e = self.groups.count
+        photos = user
+        let photo = Photo()
+        let e = self.photos.count
         var i = 0
         while i < e {
-            group.id = self.groups[i].id
-            group.name = self.groups[i].name
-            group.photo50 = self.groups[i].photo50
-            
+            photo.id = self.photos[i].id
+            photo.photo130 = self.photos[i].photo130
             mainRealm.add(user)
             i = i + 1
         }
@@ -35,13 +34,14 @@ class GroupsDB {
         } catch {
             print(error.localizedDescription)
         }
-  
+
      }
-    func fetch() -> [Group] {
+    func fetch() -> [Photo] {
 
              //Прочитать объекты
-             let users = mainRealm.objects(Group.self)
+             let users = mainRealm.objects(Photo.self)
              print(mainRealm.configuration.fileURL)
              return Array(users)
          }
  }
+

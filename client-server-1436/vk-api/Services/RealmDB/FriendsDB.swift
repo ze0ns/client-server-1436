@@ -37,7 +37,20 @@ class FriendsDB {
         } catch {
             print(error.localizedDescription)
         }
-        print("Сохраняем друзей")
-        print(mainRealm.configuration.fileURL)
+        
      }
+    func fetch() -> [Friend] {
+
+             //Прочитать объекты
+             let users = mainRealm.objects(Friend.self)
+
+             print(mainRealm.configuration.fileURL)
+
+             return Array(users)
+         }
+    func delete () {
+        try! mainRealm.write{
+            mainRealm.deleteAll()
+        }
+    }
  }
