@@ -11,7 +11,7 @@ import UIKit
 final class DisplayPhotoViewController: UIViewController {
 
     let photosAPI = PhotosAPI()
-
+    let photoDB = PhotoDB()
     var photos: [Photo] = []
     
     
@@ -25,18 +25,8 @@ final class DisplayPhotoViewController: UIViewController {
         //Регистрируем ячейку, созданную через xib
         let nib = UINib(nibName: reusableNIB, bundle: nil)
         collectionView?.register(nib, forCellWithReuseIdentifier: reusableNIB)
-        
-
-        
-        photosAPI.getPhotos{[weak self] users in
-            self?.photos = users!
-            self?.collectionView?.reloadData()
-
-
-        }
+        photos = photoDB.fetch()
        
-
-        
     }
 
 

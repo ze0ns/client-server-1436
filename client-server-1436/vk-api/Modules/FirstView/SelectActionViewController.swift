@@ -8,10 +8,32 @@
 import UIKit
 
 class SelectActionViewController: UIViewController {
+    //Блок работы с друзьями
+    var friends: [Friend] = []
+    let friendsAPI = FriendsAPI()
+    let friendDB = FriendsDB()
     
-
+    //Блок работы с группами
+    let groupsAPI = GroupsAPI()
+    var groups: [Group] = []
+    let groupDB = GroupsDB()
+    
+    //Блок работы с фотографиями
+    let photoAPI = PhotosAPI()
+    var photos: [Photo] = []
+    let photoDB = PhotoDB()
     
     
+    @IBAction func loadDataAction(_ sender: Any) {
+        friendDB.addData(friends)
+        groupDB.addData(groups)
+        photoDB.addData(photos)
+  
+    }
+    
+    @IBAction func deletaDataAction(_ sender: Any) {
+        friendDB.delete()
+    }
     
     @IBAction func frendsViewActions(_ sender: Any) {
         let FriendsVC = DisplayFrendsTableViewController()
@@ -33,6 +55,21 @@ class SelectActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        
+        //Загружаем данные из API, друзья
+        friendsAPI.getFrends {[weak self]  users in
+          self?.friends = users!
+          }
+        
+        //Загружаем данные из API, группы
+        groupsAPI.getGroups {[weak self]  users in
+            self?.groups = users!
+          }
+        
+        photoAPI.getPhotos {[weak self]  users in
+            self?.photos = users!
+          }
+        
         
  
     }

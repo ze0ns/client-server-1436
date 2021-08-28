@@ -68,30 +68,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQU-4L-eC9">
-                                <rect key="frame" x="146" y="178" width="122" height="30"/>
+                                <rect key="frame" x="146" y="189" width="122" height="30"/>
                                 <state key="normal" title="Показать друзей"/>
                                 <connections>
                                     <action selector="frendsViewActions:" destination="hbE-T7-o7l" eventType="touchUpInside" id="owh-nn-iGS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="выберите действие" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kro-M6-4Jj">
-                                <rect key="frame" x="129" y="115" width="178" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="92" y="114" width="230.5" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8w-lw-FMm">
-                                <rect key="frame" x="128" y="238" width="158" height="30"/>
+                                <rect key="frame" x="128" y="249" width="158" height="30"/>
                                 <state key="normal" title="Показать фотографии"/>
                                 <connections>
                                     <action selector="photosViewAction:" destination="hbE-T7-o7l" eventType="touchUpInside" id="kuX-H4-SR9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbL-lh-CMx">
-                                <rect key="frame" x="146" y="304" width="122" height="30"/>
+                                <rect key="frame" x="146" y="315" width="122" height="30"/>
                                 <state key="normal" title="Показать группы"/>
                                 <connections>
                                     <action selector="groupsViewActions:" destination="hbE-T7-o7l" eventType="touchUpInside" id="H6e-eg-QSY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw2-Ve-jvT">
+                                <rect key="frame" x="99.5" y="517" width="223" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Загрузить данные">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadDataAction:" destination="hbE-T7-o7l" eventType="touchUpInside" id="tgD-PI-0Vp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddw-Fm-2ee">
+                                <rect key="frame" x="110" y="613" width="199" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Удалить данные">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="deletaDataAction:" destination="hbE-T7-o7l" eventType="touchUpInside" id="jgK-yq-Gqt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,13 +122,16 @@
                             <constraint firstItem="T8w-lw-FMm" firstAttribute="top" secondItem="KQU-4L-eC9" secondAttribute="bottom" constant="30" id="3IM-w0-u6s"/>
                             <constraint firstItem="T8w-lw-FMm" firstAttribute="centerX" secondItem="KQU-4L-eC9" secondAttribute="centerX" id="6Ys-HA-6LH"/>
                             <constraint firstItem="ZbL-lh-CMx" firstAttribute="trailing" secondItem="KQU-4L-eC9" secondAttribute="trailing" id="Q5o-8Y-UA3"/>
-                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="KQU-4L-eC9" secondAttribute="centerX" constant="11" id="Tg3-NY-RIy"/>
+                            <constraint firstItem="2sK-Qx-lu9" firstAttribute="bottom" secondItem="Vw2-Ve-jvT" secondAttribute="bottom" constant="300" id="SIm-TU-7Zr"/>
+                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="KQU-4L-eC9" secondAttribute="centerX" id="Tg3-NY-RIy"/>
                             <constraint firstItem="ZbL-lh-CMx" firstAttribute="top" secondItem="KQU-4L-eC9" secondAttribute="bottom" constant="96" id="Xoa-wQ-jF6"/>
-                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="ZbL-lh-CMx" secondAttribute="centerX" constant="11" id="dkl-FR-iQ9"/>
-                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="top" secondItem="2sK-Qx-lu9" secondAttribute="top" constant="71" id="fnb-l7-rGE"/>
-                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" constant="11" id="hoR-rv-mnI"/>
-                            <constraint firstItem="KQU-4L-eC9" firstAttribute="top" secondItem="Kro-M6-4Jj" secondAttribute="bottom" constant="42" id="qkU-85-rNT"/>
-                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="leading" secondItem="2sK-Qx-lu9" secondAttribute="leading" constant="129" id="rzo-PP-jlc"/>
+                            <constraint firstItem="Vw2-Ve-jvT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2sK-Qx-lu9" secondAttribute="leading" symbolic="YES" id="buV-GG-8dL"/>
+                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="ZbL-lh-CMx" secondAttribute="centerX" id="dkl-FR-iQ9"/>
+                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="top" secondItem="2sK-Qx-lu9" secondAttribute="top" constant="70" id="fnb-l7-rGE"/>
+                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="hoR-rv-mnI"/>
+                            <constraint firstItem="Vw2-Ve-jvT" firstAttribute="trailing" secondItem="Kro-M6-4Jj" secondAttribute="trailing" id="q2N-Ng-eRn"/>
+                            <constraint firstItem="KQU-4L-eC9" firstAttribute="top" secondItem="Kro-M6-4Jj" secondAttribute="bottom" constant="43" id="qkU-85-rNT"/>
+                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2sK-Qx-lu9" secondAttribute="leading" id="rzo-PP-jlc"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -202,6 +226,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
