@@ -94,6 +94,14 @@
                                     <action selector="groupsViewActions:" destination="hbE-T7-o7l" eventType="touchUpInside" id="H6e-eg-QSY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw2-Ve-jvT">
+                                <rect key="frame" x="142" y="453" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Загрузить данные"/>
+                                <connections>
+                                    <action selector="loadDataAction:" destination="hbE-T7-o7l" eventType="touchUpInside" id="tgD-PI-0Vp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2sK-Qx-lu9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
