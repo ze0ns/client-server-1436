@@ -11,10 +11,10 @@ import RealmSwift
 
 class GroupsDB {
 
-     let config = Realm.Configuration(schemaVersion: 0)
-     lazy var mainRealm = try! Realm(configuration: config)
-     var groups: [Group] = []
-    
+    let config = Realm.Configuration(schemaVersion: 0)
+    lazy var mainRealm = try! Realm(configuration: config)
+    var groups: [Group] = []
+    var token: NotificationToken?
     
      func addData(_ user: [Group]) {
         mainRealm.beginWrite()
@@ -37,11 +37,4 @@ class GroupsDB {
         }
   
      }
-    func fetch() -> [Group] {
-
-             //Прочитать объекты
-             let users = mainRealm.objects(Group.self)
-             print(mainRealm.configuration.fileURL)
-             return Array(users)
-         }
  }
