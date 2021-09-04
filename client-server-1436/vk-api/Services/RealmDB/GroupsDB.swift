@@ -37,4 +37,14 @@ class GroupsDB {
         }
   
      }
+    func fetch() -> [Group] {
+
+             //Прочитать объекты
+             let group = mainRealm.objects(Group.self)
+
+             print(mainRealm.configuration.fileURL)
+
+             return Array(group)
+        
+         }
  }

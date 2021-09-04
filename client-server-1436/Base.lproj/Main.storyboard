@@ -95,43 +95,57 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw2-Ve-jvT">
-                                <rect key="frame" x="99.5" y="517" width="223" height="45"/>
+                                <rect key="frame" x="46.5" y="701" width="321" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Загрузить данные">
+                                <state key="normal" title="Загрузить данные в Realm">
                                     <color key="titleColor" systemColor="systemGreenColor"/>
                                 </state>
                                 <connections>
                                     <action selector="loadDataAction:" destination="hbE-T7-o7l" eventType="touchUpInside" id="tgD-PI-0Vp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddw-Fm-2ee">
-                                <rect key="frame" x="110" y="613" width="199" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddw-Fm-2ee">
+                                <rect key="frame" x="51" y="797" width="312" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Удалить данные">
+                                <state key="normal" title="Удалить данные из Realm">
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                                 <connections>
                                     <action selector="deletaDataAction:" destination="hbE-T7-o7l" eventType="touchUpInside" id="jgK-yq-Gqt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8l-qq-VXX">
+                                <rect key="frame" x="105" y="387" width="204" height="30"/>
+                                <state key="normal" title="Загрузить данные в Firebase"/>
+                                <connections>
+                                    <action selector="buttonFBAction:" destination="hbE-T7-o7l" eventType="touchUpInside" id="9EJ-QQ-1KA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2sK-Qx-lu9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="T8w-lw-FMm" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="1oO-tW-jZ9"/>
                             <constraint firstItem="T8w-lw-FMm" firstAttribute="top" secondItem="KQU-4L-eC9" secondAttribute="bottom" constant="30" id="3IM-w0-u6s"/>
                             <constraint firstItem="T8w-lw-FMm" firstAttribute="centerX" secondItem="KQU-4L-eC9" secondAttribute="centerX" id="6Ys-HA-6LH"/>
+                            <constraint firstItem="Ddw-Fm-2ee" firstAttribute="top" secondItem="Vw2-Ve-jvT" secondAttribute="bottom" constant="51" id="6kz-Up-2G3"/>
+                            <constraint firstItem="m8l-qq-VXX" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="Ds3-ot-1rD"/>
+                            <constraint firstItem="m8l-qq-VXX" firstAttribute="top" secondItem="ZbL-lh-CMx" secondAttribute="bottom" constant="42" id="HGp-9P-lIA"/>
                             <constraint firstItem="ZbL-lh-CMx" firstAttribute="trailing" secondItem="KQU-4L-eC9" secondAttribute="trailing" id="Q5o-8Y-UA3"/>
-                            <constraint firstItem="2sK-Qx-lu9" firstAttribute="bottom" secondItem="Vw2-Ve-jvT" secondAttribute="bottom" constant="300" id="SIm-TU-7Zr"/>
                             <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="KQU-4L-eC9" secondAttribute="centerX" id="Tg3-NY-RIy"/>
                             <constraint firstItem="ZbL-lh-CMx" firstAttribute="top" secondItem="KQU-4L-eC9" secondAttribute="bottom" constant="96" id="Xoa-wQ-jF6"/>
-                            <constraint firstItem="Vw2-Ve-jvT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2sK-Qx-lu9" secondAttribute="leading" symbolic="YES" id="buV-GG-8dL"/>
+                            <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="a43-Lc-BeJ"/>
+                            <constraint firstItem="KQU-4L-eC9" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="bCZ-jq-mvM"/>
                             <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="ZbL-lh-CMx" secondAttribute="centerX" id="dkl-FR-iQ9"/>
+                            <constraint firstItem="ZbL-lh-CMx" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="eZJ-mw-BFk"/>
+                            <constraint firstItem="Vw2-Ve-jvT" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="fjI-mh-unT"/>
                             <constraint firstItem="Kro-M6-4Jj" firstAttribute="top" secondItem="2sK-Qx-lu9" secondAttribute="top" constant="70" id="fnb-l7-rGE"/>
+                            <constraint firstItem="m8l-qq-VXX" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="gVu-xq-HAC"/>
                             <constraint firstItem="Kro-M6-4Jj" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="hoR-rv-mnI"/>
-                            <constraint firstItem="Vw2-Ve-jvT" firstAttribute="trailing" secondItem="Kro-M6-4Jj" secondAttribute="trailing" id="q2N-Ng-eRn"/>
+                            <constraint firstItem="2sK-Qx-lu9" firstAttribute="bottom" secondItem="Ddw-Fm-2ee" secondAttribute="bottom" constant="20" id="nHZ-zz-OaW"/>
                             <constraint firstItem="KQU-4L-eC9" firstAttribute="top" secondItem="Kro-M6-4Jj" secondAttribute="bottom" constant="43" id="qkU-85-rNT"/>
                             <constraint firstItem="Kro-M6-4Jj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2sK-Qx-lu9" secondAttribute="leading" id="rzo-PP-jlc"/>
+                            <constraint firstItem="Ddw-Fm-2ee" firstAttribute="centerX" secondItem="FE8-hH-cLZ" secondAttribute="centerX" id="wjr-mF-dRj"/>
                         </constraints>
                     </view>
                 </viewController>

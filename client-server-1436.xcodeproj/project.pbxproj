@@ -24,6 +24,9 @@
 		06A9B75B26DA281300802D94 /* FriendsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9B75A26DA281300802D94 /* FriendsDB.swift */; };
 		06A9B75D26DA53A700802D94 /* GroupsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9B75C26DA53A700802D94 /* GroupsDB.swift */; };
 		06A9B75F26DA573800802D94 /* PhotoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9B75E26DA573800802D94 /* PhotoDB.swift */; };
+		06A9B76126E348E100802D94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06A9B76026E348E100802D94 /* GoogleService-Info.plist */; };
+		06A9B76426E349C800802D94 /* VkFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9B76326E349C800802D94 /* VkFB.swift */; };
+		06A9B76626E34D3700802D94 /* VKFbGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9B76526E34D3700802D94 /* VKFbGroups.swift */; };
 		06C4826726CE49AA007D28E3 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4826626CE49A9007D28E3 /* Data+PrettyJSON.swift */; };
 		06C4826926CE4A79007D28E3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4826826CE4A79007D28E3 /* Photo.swift */; };
 		06C4826B26CE5924007D28E3 /* PhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4826A26CE5924007D28E3 /* PhotosAPI.swift */; };
@@ -55,6 +58,9 @@
 		06A9B75A26DA281300802D94 /* FriendsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDB.swift; sourceTree = "<group>"; };
 		06A9B75C26DA53A700802D94 /* GroupsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDB.swift; sourceTree = "<group>"; };
 		06A9B75E26DA573800802D94 /* PhotoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDB.swift; sourceTree = "<group>"; };
+		06A9B76026E348E100802D94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06A9B76326E349C800802D94 /* VkFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkFB.swift; sourceTree = "<group>"; };
+		06A9B76526E34D3700802D94 /* VKFbGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKFbGroups.swift; sourceTree = "<group>"; };
 		06C4826626CE49A9007D28E3 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
 		06C4826826CE4A79007D28E3 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		06C4826A26CE5924007D28E3 /* PhotosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPI.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		066BCE4526CA9CE100050F56 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				06A9B76226E349B400802D94 /* FirebaseDB */,
 				06A9B75926DA27F700802D94 /* RealmDB */,
 				069F361326CAA0FC00462686 /* Session.swift */,
 				0695E60926CCC37F004ED912 /* FriendsAPI.swift */,
@@ -137,6 +144,7 @@
 				068E4A8526C66E4900AD9EE7 /* Main.storyboard */,
 				068E4A8826C66E4C00AD9EE7 /* Assets.xcassets */,
 				068E4A8A26C66E4C00AD9EE7 /* LaunchScreen.storyboard */,
+				06A9B76026E348E100802D94 /* GoogleService-Info.plist */,
 				068E4A8D26C66E4C00AD9EE7 /* Info.plist */,
 			);
 			path = "client-server-1436";
@@ -190,6 +198,15 @@
 				06A9B75E26DA573800802D94 /* PhotoDB.swift */,
 			);
 			path = RealmDB;
+			sourceTree = "<group>";
+		};
+		06A9B76226E349B400802D94 /* FirebaseDB */ = {
+			isa = PBXGroup;
+			children = (
+				06A9B76326E349C800802D94 /* VkFB.swift */,
+				06A9B76526E34D3700802D94 /* VKFbGroups.swift */,
+			);
+			path = FirebaseDB;
 			sourceTree = "<group>";
 		};
 		06C25A6626C8E00600470886 /* app */ = {
@@ -305,6 +322,7 @@
 			files = (
 				068E4A8C26C66E4C00AD9EE7 /* LaunchScreen.storyboard in Resources */,
 				06374C1B26D10F14005E3529 /* PhotosCollectionViewCell.xib in Resources */,
+				06A9B76126E348E100802D94 /* GoogleService-Info.plist in Resources */,
 				068E4A8926C66E4C00AD9EE7 /* Assets.xcassets in Resources */,
 				068E4A8726C66E4900AD9EE7 /* Main.storyboard in Resources */,
 			);
@@ -365,10 +383,12 @@
 				06A9B75D26DA53A700802D94 /* GroupsDB.swift in Sources */,
 				06C4827426CF89F4007D28E3 /* SelectActionViewController.swift in Sources */,
 				06374C2026D16BD2005E3529 /* DisplayGroupsTableViewController.swift in Sources */,
+				06A9B76426E349C800802D94 /* VkFB.swift in Sources */,
 				0695E60A26CCC380004ED912 /* FriendsAPI.swift in Sources */,
 				068E4A8026C66E4900AD9EE7 /* AppDelegate.swift in Sources */,
 				06C4826F26CE5DF8007D28E3 /* Groups.swift in Sources */,
 				069F361B26CAA1B700462686 /* DisplayFrendsTableViewController.swift in Sources */,
+				06A9B76626E34D3700802D94 /* VKFbGroups.swift in Sources */,
 				06374C1A26D10F14005E3529 /* PhotosCollectionViewCell.swift in Sources */,
 				06374C2226D21E88005E3529 /* GroupDetails.swift in Sources */,
 				06A9B75F26DA573800802D94 /* PhotoDB.swift in Sources */,

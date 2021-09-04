@@ -10,6 +10,8 @@ pod 'DynamicJSON'
 pod 'RealmSwift'
 
 #pod 'Firebase'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 
 
   # Pods for client-server-1436

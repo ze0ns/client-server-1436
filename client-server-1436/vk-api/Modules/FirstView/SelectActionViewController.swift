@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SelectActionViewController: UIViewController {
     //Блок работы с друзьями
@@ -23,7 +24,31 @@ class SelectActionViewController: UIViewController {
     var photos: [Photo] = []
     let photoDB = PhotoDB()
     
+    //Работаем с FireBase
+    let authService = Auth.auth()
+    let refUser   = Database.database().reference(withPath: "users") //ccылка на контейнер/папку в Database
+    let refGroups = Database.database().reference(withPath: "groups") //ccылка на контейнер/папку в Database
     
+    
+    
+    
+    @IBAction func buttonFBAction(_ sender: Any) {
+        //Id пользователя получаем из синглтона
+        let user = VkFB(id: Session.shared.userId)
+        let idRef = self.refUser.child(String(Session.shared.userId))
+        idRef.setValue(user.toAnyObject())
+        
+        //Имя группы и ID получаем из Realm, поэтому надо сначала их туда загрузить - нажав кнопку "Загрузить данные"
+        let groupFB = groupDB.fetch()
+        var i = 0
+        for _ in groupFB {
+            let groupsFB = VKFbGroups(name: groupFB[i].name, id:groupFB[i].id)
+            let nameRef = self.refGroups.child(groupFB[i].name)
+            nameRef.setValue(groupsFB.toAnyObject())
+            i = i+1
+        }
+    }
+
     @IBAction func loadDataAction(_ sender: Any) {
         friendDB.addData(friends)
         groupDB.addData(groups)
