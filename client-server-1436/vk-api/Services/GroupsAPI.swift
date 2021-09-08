@@ -79,28 +79,6 @@ final class GroupsAPI{
         }
       }
 
-
-  /*
-    //метод, поиск группы по ключевому слову
-    func searchGroups(comletion: @escaping(([User2]?)->())){
-            let method = "/groups.search"
-
-            let parameters: Parameters = [
-                "access_token": Session.shared.token,
-                "v":version,
-                "q": "музыка"
-                ]
-            let url = baseUrl + method
-            AF.request(url, method: .get, parameters: parameters).responseJSON {
-                response in
-//
-//                print("----------------PRINT-----------------")
-//                print(response.data?.prettyJSON)
-
-
-            }
-    }
-    */
 }
 
 

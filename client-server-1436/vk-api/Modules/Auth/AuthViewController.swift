@@ -34,7 +34,8 @@ class AuthViewController: UIViewController {
                  URLQueryItem(name: "client_id", value: "7822904"),
                  URLQueryItem(name: "display", value: "mobile"),
                  URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-                 URLQueryItem(name: "scope", value: "262150"),
+                 //URLQueryItem(name: "scope", value: "262150"),
+                 URLQueryItem(name: "scope", value: "270336"),
                  URLQueryItem(name: "response_type", value: "token"),
                  URLQueryItem(name: "revoke", value: "1"),
                  URLQueryItem(name: "v", value: "5.68")

@@ -10,7 +10,9 @@ import Firebase
 
 class SelectActionViewController: UIViewController {
     //Блок работы с друзьями
+    ///Переменная, в которую мы будем помещать списко друзей авторизовавшегося пользователя
     var friends: [Friend] = []
+    
     let friendsAPI = FriendsAPI()
     let friendDB = FriendsDB()
     
@@ -23,11 +25,20 @@ class SelectActionViewController: UIViewController {
     let photoAPI = PhotosAPI()
     var photos: [Photo] = []
     let photoDB = PhotoDB()
+  
+    //Блок работы с новостями
+    
+    let newsFeedAPI = NewsFeedAPI()
+    var newsFeed: [Any] = []
     
     //Работаем с FireBase
     let authService = Auth.auth()
-    let refUser   = Database.database().reference(withPath: "users") //ccылка на контейнер/папку в Database
-    let refGroups = Database.database().reference(withPath: "groups") //ccылка на контейнер/папку в Database
+    
+    ///ccылка на контейнер/папку в Database
+    let refUser   = Database.database().reference(withPath: "users")
+    
+    ///ccылка на контейнер/папку в Database
+    let refGroups = Database.database().reference(withPath: "groups")
     
     
     
@@ -54,6 +65,12 @@ class SelectActionViewController: UIViewController {
         groupDB.addData(groups)
         photoDB.addData(photos)
   
+    }
+    
+    @IBAction func loadNews(_ sender: Any) {
+        newsFeedAPI.getNews {[weak self]  users in
+            self?.newsFeed = users!
+          }
     }
     
     @IBAction func deletaDataAction(_ sender: Any) {
