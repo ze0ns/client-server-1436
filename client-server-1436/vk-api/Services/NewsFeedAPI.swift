@@ -21,13 +21,13 @@ final class NewsFeedAPI{
     let token = Session.shared.token
     let clientId = Session.shared.userId
     let version = "5.131"
-    let filters = "post"
-    let count = "2"
-    let scope = ["offline","photos","wall","frends"]
+    let filters = "note"
+    let count = "3"
+    
     
 
       //метод, поиск группы по ключевому слову
-      func getNews(comletion: @escaping(([UserNews]?)->())){
+      func getNews(comletion: @escaping(([Item]?)->())){
               let method = "/newsfeed.get"
 
               let parameters: Parameters = [
@@ -38,51 +38,36 @@ final class NewsFeedAPI{
                   ]
               let url = baseUrl + method
               AF.request(url, method: .get, parameters: parameters).responseJSON {
-                  response in
-  
-                  print("----------------PRINT-----------------")
-                  print(response.data?.prettyJSON)
+                response in
+                guard let data = response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
 
-              }
-      }
+//                print("----------------PRINT-----------------")
+//                print(response.data?.prettyJSON)
+//                //добавим проверку на ошибку, если будет ошибка она выведется в консоль
+                do {
+                    let NewsFeedResponse = try JSONDecoder().decode(NewsFeed.self, from: data)
+
+                    let newsFeed = NewsFeedResponse.response.items
+
+                    comletion(newsFeed)
+                } catch DecodingError.keyNotFound(let key, let context) {
+                    Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
+                } catch DecodingError.valueNotFound(let type, let context) {
+                    Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
+                } catch DecodingError.typeMismatch(let type, let context) {
+                    Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
+                } catch DecodingError.dataCorrupted(let context) {
+                    Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
+                } catch let error as NSError {
+                    NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
+                }
+            }
+
+        }
+}
 
     
 
 
-}
 
-////метод, вывести все группы пользователя
-//func getGroups(comletion: @escaping(([Group]?)->())){
-//    let method = "/groups.get"
-//
-//    let parameters: Parameters = [
-//        "owner_id": clientId,
-//        "access_token": Session.shared.token,
-//        "v":version,
-//        "extended": 1
-//        ]
-//    let url = baseUrl + method
-//    AF.request(url, method: .get, parameters: parameters).responseJSON {
-//        response in
-//        guard let data = response.data else {return} //Распаковали наш ответ, и проверили его. Если все хорошо - идём дальше
-//
-//        //добавим проверку на ошибку, если будет ошибка она выведется в консоль
-//        do {
-//            let groupResponse = try? JSONDecoder().decode(Groups.self, from: data)
-//
-//            let groups = groupResponse?.response.items
-//
-//            comletion(groups)
-//        } catch DecodingError.keyNotFound(let key, let context) {
-//            Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
-//        } catch DecodingError.valueNotFound(let type, let context) {
-//            Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
-//        } catch DecodingError.typeMismatch(let type, let context) {
-//            Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
-//        } catch DecodingError.dataCorrupted(let context) {
-//            Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
-//        } catch let error as NSError {
-//            NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
-//        }
-//    }
-//  }
+
