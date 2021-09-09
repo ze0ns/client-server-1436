@@ -12,9 +12,6 @@ import Foundation
 import Alamofire
 import DynamicJSON
 
-struct UserNews{
-    
-}
 
 final class NewsFeedAPI{
     let baseUrl = "https://api.vk.com/method"
@@ -22,7 +19,7 @@ final class NewsFeedAPI{
     let clientId = Session.shared.userId
     let version = "5.131"
     let filters = "note"
-    let count = "3"
+    let count = "31"
     
     
 
