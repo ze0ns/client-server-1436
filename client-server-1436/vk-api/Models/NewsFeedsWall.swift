@@ -36,12 +36,12 @@ class Response: Codable {
 
 // MARK: - Group
 class GroupNews: Codable {
-    let isMember, id: Int
-    let photo100: String
-    let isAdvertiser, isAdmin: Int
-    let photo50, photo200: String
-    let type, screenName, name: String
-    let isClosed: Int
+    let isMember, id: Int?
+    let photo100: String?
+    let isAdvertiser, isAdmin: Int?
+    let photo50, photo200: String?
+    let type, screenName, name: String?
+    let isClosed: Int?
 
     enum CodingKeys: String, CodingKey {
         case isMember = "is_member"
@@ -146,17 +146,17 @@ class Attachment: Codable {
 
 // MARK: - Audio
 class Audio: Codable {
-    let id, albumID: Int
-    let storiesAllowed, storiesCoverAllowed: Bool
-    let mainArtists: [MainArtist]
-    let trackCode: String
-    let url: String
-    let title: String
-    let ownerID, date: Int
-    let shortVideosAllowed: Bool
-    let duration: Int
-    let artist: String
-    let isExplicit, isFocusTrack: Bool
+    let id, albumID: Int?
+    let storiesAllowed, storiesCoverAllowed: Bool?
+    let mainArtists: [MainArtist]?
+    let trackCode: String?
+    let url: String?
+    let title: String?
+    let ownerID, date: Int?
+    let shortVideosAllowed: Bool?
+    let duration: Int?
+    let artist: String?
+    let isExplicit, isFocusTrack: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -195,7 +195,7 @@ class Audio: Codable {
 
 // MARK: - MainArtist
 class MainArtist: Codable {
-    let name, id, domain: String
+    let name, id, domain: String?
 
     init(name: String, id: String, domain: String) {
         self.name = name
@@ -206,13 +206,13 @@ class MainArtist: Codable {
 
 // MARK: - Photo
 class PhotoNews: Codable {
-    let albumID, id, date: Int
-    let text: String
-    let userID: Int
-    let sizes: [Size]
-    let hasTags: Bool
-    let ownerID: Int
-    let accessKey: String
+    let albumID, id, date: Int?
+    let text: String?
+    let userID: Int?
+    let sizes: [Size]?
+    let hasTags: Bool?
+    let ownerID: Int?
+    let accessKey: String?
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"
@@ -239,9 +239,9 @@ class PhotoNews: Codable {
 
 // MARK: - Size
 class Size: Codable {
-    let width, height: Int
-    let url: String
-    let type: String
+    let width, height: Int?
+    let url: String?
+    let type: String?
 
     init(width: Int, height: Int, url: String, type: String) {
         self.width = width
@@ -253,7 +253,7 @@ class Size: Codable {
 
 // MARK: - Comments
 class Comments: Codable {
-    let count, canPost: Int
+    let count, canPost: Int?
 
     enum CodingKeys: String, CodingKey {
         case count
@@ -268,7 +268,7 @@ class Comments: Codable {
 
 // MARK: - Donut
 class Donut: Codable {
-    let isDonut: Bool
+    let isDonut: Bool?
 
     enum CodingKeys: String, CodingKey {
         case isDonut = "is_donut"
@@ -281,7 +281,7 @@ class Donut: Codable {
 
 // MARK: - Likes
 class Likes: Codable {
-    let canLike, canPublish, count, userLikes: Int
+    let canLike, canPublish, count, userLikes: Int?
 
     enum CodingKeys: String, CodingKey {
         case canLike = "can_like"
@@ -300,7 +300,7 @@ class Likes: Codable {
 
 // MARK: - PostSource
 class PostSource: Codable {
-    let type, platform: String
+    let type, platform: String?
 
     init(type: String, platform: String) {
         self.type = type
@@ -310,7 +310,7 @@ class PostSource: Codable {
 
 // MARK: - Reposts
 class Reposts: Codable {
-    let count, userReposted: Int
+    let count, userReposted: Int?
 
     enum CodingKeys: String, CodingKey {
         case count
@@ -325,7 +325,7 @@ class Reposts: Codable {
 
 // MARK: - Views
 class Views: Codable {
-    let count: Int
+    let count: Int?
 
     init(count: Int) {
         self.count = count
@@ -334,16 +334,16 @@ class Views: Codable {
 
 // MARK: - Profile
 class Profile: Codable {
-    let canAccessClosed: Bool
-    let screenName: String
-    let online, id: Int
-    let photo100: String
-    let lastName: String
-    let photo50: String
-    let onlineInfo: OnlineInfo
-    let sex: Int
-    let isClosed: Bool
-    let firstName: String
+    let canAccessClosed: Bool?
+    let screenName: String?
+    let online, id: Int?
+    let photo100: String?
+    let lastName: String?
+    let photo50: String?
+    let onlineInfo: OnlineInfo?
+    let sex: Int?
+    let isClosed: Bool?
+    let firstName: String?
 
     enum CodingKeys: String, CodingKey {
         case canAccessClosed = "can_access_closed"
@@ -375,7 +375,7 @@ class Profile: Codable {
 
 // MARK: - OnlineInfo
 class OnlineInfo: Codable {
-    let visible, isMobile, isOnline: Bool
+    let visible, isMobile, isOnline: Bool?
 
     enum CodingKeys: String, CodingKey {
         case visible

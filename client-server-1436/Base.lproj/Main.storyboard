@@ -228,6 +228,21 @@
             </objects>
             <point key="canvasLocation" x="4097" y="-38"/>
         </scene>
+        <!--News Feeds Controller-->
+        <scene sceneID="MPD-cu-UUP">
+            <objects>
+                <viewController storyboardIdentifier="NewsFeedsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IMa-Rv-6je" customClass="NewsFeedsController" customModule="client_server_1436" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3KG-XR-VrG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hwI-Pd-ZNm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTN-dD-OIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4770" y="460"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7yE-OU-8su">
             <objects>

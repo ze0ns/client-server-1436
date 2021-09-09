@@ -68,9 +68,8 @@ class SelectActionViewController: UIViewController {
     }
     
     @IBAction func loadNews(_ sender: Any) {
-        newsFeedAPI.getNews {[weak self]  users in
-            self?.newsFeed = users!
-          }
+         let newsVC = NewsFeedsController()
+        self.navigationController?.pushViewController(newsVC, animated: true)
     }
     
     @IBAction func deletaDataAction(_ sender: Any) {
